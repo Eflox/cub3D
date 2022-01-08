@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charlesdansembourg <marvin@42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/28 11:13:45 by charlesda         #+#    #+#             */
-/*   Updated: 2021/02/28 11:16:59 by charlesda        ###   ########.fr       */
+/*   Created: 2021/05/14 19:34:57 by charlesda         #+#    #+#             */
+/*   Updated: 2021/05/14 19:34:58 by charlesda        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CUB3D_H_
-# define _CUB3D_H_
+#include "../include/libft.h"
 
-# include  "../mlx/mlx.h"
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	unsigned int	i;
 
-# include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <math.h>
-# include <fcntl.h>
-
-#endif
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] != '\0' && i < (size - 1))
+	{
+		dst[i] = src[i];
+		++i;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
+}
